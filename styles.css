@@ -1,58 +1,33 @@
-body {
-    background-color: #f8e8ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.robot {
+.step {
+    height: 700px;
+    background: #fde7ef;
     position: relative;
-    width: 200px;
-    height: 250px;
-    background-color: #ccc;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
-}
-
-.eyes {
-    display: flex;
-    justify-content: space-between;
-    width: 120px;
-    margin-bottom: 30px;
-}
-
-.eye {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pupil {
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    border-radius: 50%;
+  }
+  .step .stepbox {
+    width: 800px; height: 600px;
+    background: url(https://user-images.githubusercontent.com/106949433/188998629-e1cb8ac8-0263-4b69-935d-eacd186c2535.jpg);
+    border-radius: 0;
     position: absolute;
-    transition: all 0.1s;
-}
-
-.mouth {
-    width: 60px;
-    height: 20px;
-    background-color: red;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 20px;
-    transition: all 0.3s ease;
-}
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    animation: ani 1s steps(24, start) infinite;
+  }
+  .step .stepbox.start {
+    animation-play-state: running;
+  }
+  .step .stepbox.stop {
+    animation-play-state: paused;
+  }
+  @keyframes ani {
+    0% {background-position: 0 0;}
+    100% {background-position: -19200px 0;}
+  }
+  .stepBtn {
+    position: absolute; left: 15px; top: 20px;
+  }
+  .stepBtn a {
+    background: #e16162; color: #fff;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 3px;
+  }
